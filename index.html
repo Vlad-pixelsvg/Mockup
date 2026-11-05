@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#351b2b">
+  <meta name="description" content="Piattaforma per la gestione e la valorizzazione del patrimonio digitale della biblioteca.">
+  <title>Biblioteca Digitale — Gestione del patrimonio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Salta al contenuto</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigazione principale">
+      <a class="brand" href="#" aria-label="Biblioteca Digitale, pagina iniziale">
+        <svg class="brand-mark" viewBox="0 0 100 62" aria-hidden="true">
+          <path d="M50 15C35 2 18 3 7 12v38c13-8 28-8 43 5 15-13 30-13 43-5V12C82 3 65 2 50 15Z"/>
+          <path d="M50 15v40M15 15v27m10-31v29m10-29v29m50-25v27M75 11v29M65 11v29M7 50c14-8 29-8 43 5 14-13 29-13 43-5"/>
+        </svg>
+        <span class="brand-name">Biblioteca<br>Digitale</span>
+        <span class="brand-tagline">Conserva · Accedi · Condividi</span>
+      </a>
+
+      <nav class="side-nav">
+        <a class="nav-link active" href="#dashboard" data-view="dashboard"><span class="nav-icon">⌂</span>Dashboard</a>
+        <a class="nav-link" href="#collezioni" data-view="collezioni"><span class="nav-icon">▤</span>Collezioni</a>
+        <a class="nav-link" href="#mets" data-view="mets"><span class="nav-icon">▧</span>Metadati METS</a>
+        <a class="nav-link" href="#ricerca" data-view="ricerca"><span class="nav-icon">⌕</span>Ricerca Avanzata</a>
+        <a class="nav-link" href="#utenti" data-view="utenti"><span class="nav-icon">♧</span>Utenti e Accessi</a>
+        <a class="nav-link" href="#statistiche" data-view="statistiche"><span class="nav-icon">▥</span>Statistiche</a>
+        <a class="nav-link" href="#impostazioni" data-view="impostazioni"><span class="nav-icon">⚙</span>Impostazioni</a>
+      </nav>
+
+      <div class="sidebar-art" aria-hidden="true">
+        <svg viewBox="0 0 220 280" preserveAspectRatio="xMidYMax meet">
+          <g fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M110 18v34m-9-25h18M89 52h42l-5 15H94zM78 67h64v10H78zM68 77h84v12H68z"/>
+            <path d="M82 89v78m56-78v78M69 167h82M58 180h104M49 192h122M39 204h142"/>
+            <path d="M92 167v-37a18 18 0 0 1 36 0v37M102 167v-34a8 8 0 0 1 16 0v34"/>
+            <path d="M24 204v50m172-50v50M10 254h200M20 220h180M30 231h160M40 242h140"/>
+            <path d="M110 3v15M105 8h10M5 254l105-25 105 25"/>
+            <path d="M0 270h220M12 262h196"/>
+          </g>
+        </svg>
+      </div>
+      <div class="help-box">
+        <span class="help-icon">◉</span>
+        <div><strong>Hai bisogno di aiuto?</strong><span>Assistenza</span></div>
+        <button class="icon-button help-open" aria-label="Apri assistenza">→</button>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobileMenu" aria-label="Apri menu">☰</button>
+        <label class="global-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Cerca tra le risorse digitali..." aria-label="Cerca tra le risorse digitali">
+          <kbd>Ctrl + K</kbd>
+        </label>
+        <div class="top-actions">
+          <button class="icon-button notification-button" aria-label="Notifiche, 2 non lette">♧<i>2</i></button>
+          <button class="profile-button" aria-label="Profilo di Gabriel Corcodel">
+            <span class="avatar">GC</span><span>Gabriel Corcodel</span><span class="chevron">⌄</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="view active-view" id="dashboard">
+          <div class="welcome-grid">
+            <div class="hero">
+              <div class="hero-copy">
+                <p class="eyebrow">Il patrimonio della biblioteca</p>
+                <h1>La cultura,<br>sempre a portata <em>di mano</em></h1>
+                <p>Gestisci, conserva e valorizza il patrimonio digitale della tua biblioteca.</p>
+                <a class="cream-button" href="#collezioni" data-view="collezioni"><span>▤</span> Scopri le collezioni <b>→</b></a>
+              </div>
+              <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+            </div>
+            <div class="quick-actions">
+              <button class="quick-action" data-action="upload"><span class="quick-icon">＋</span><span>Nuova<br>Digitalizzazione</span><b>›</b></button>
+              <button class="quick-action" data-view="mets"><span class="quick-icon">▣</span><span>Gestisci<br>Metadati METS</span><b>›</b></button>
+              <button class="quick-action" data-view="statistiche"><span class="quick-icon">▥</span><span>Visualizza<br>Statistiche</span><b>›</b></button>
+            </div>
+          </div>
+
+          <section class="stats-grid" aria-label="Statistiche generali">
+            <article class="stat-card stat-rose"><span class="stat-symbol">▤</span><div><strong id="statResources">12.540</strong><span>Risorse Digitali</span></div><small>↑ +5%</small></article>
+            <article class="stat-card stat-peach"><span class="stat-symbol">♧</span><div><strong id="statUsers">3.248</strong><span>Utenti Attivi</span></div><small>↑ +12%</small></article>
+            <article class="stat-card stat-sand"><span class="stat-symbol">▱</span><div><strong id="statCollections">72</strong><span>Collezioni</span></div><small>↑ +2%</small></article>
+            <article class="stat-card stat-lilac"><span class="stat-symbol">▤</span><div><strong>486 GB</strong><span>Spazio Utilizzato</span><div class="storage-track"><i></i></div></div></article>
+          </section>
+
+          <div class="content-grid">
+            <section class="panel collections-panel">
+              <div class="panel-heading"><h2><span class="heading-mark">▮</span>Ultime Collezioni</h2><a href="#collezioni" data-view="collezioni">Vedi tutte <b>→</b></a></div>
+              <div class="collection-grid" id="collectionGrid">
+                <article class="collection-card"><div class="collection-image image-books"><span>Monografie</span></div><div class="collection-info"><h3>Fondo Storico<br>Civico</h3><p>1.240 risorse</p></div><button class="round-arrow" aria-label="Apri Fondo Storico Civico">→</button></article>
+                <article class="collection-card"><div class="collection-image image-manuscript"><span>Manoscritti</span></div><div class="collection-info"><h3>Archivio Manoscritti<br>Digitali</h3><p>856 risorse</p></div><button class="round-arrow" aria-label="Apri Archivio Manoscritti Digitali">→</button></article>
+                <article class="collection-card"><div class="collection-image image-map"><span>Carte</span></div><div class="collection-info"><h3>Atlante Storico<br>Torinese</h3><p>320 risorse</p></div><button class="round-arrow" aria-label="Apri Atlante Storico Torinese">→</button></article>
+                <article class="collection-card"><div class="collection-image image-art"><span>Arte</span></div><div class="collection-info"><h3>Collezione d'Arte</h3><p>672 risorse</p></div><button class="round-arrow" aria-label="Apri Collezione d'Arte">→</button></article>
+              </div>
+            </section>
+
+            <section class="panel activity-panel">
+              <div class="panel-heading"><h2><span class="heading-mark">▥</span>Attività Recenti</h2><a href="#attivita">Vedi tutte <b>→</b></a></div>
+              <ol class="activity-list" id="activityList">
+                <li><span class="activity-icon book">▤</span><div><strong>Nuova collezione aggiunta</strong><span>Fondo Viaggiatori – 12 ore fa</span></div></li>
+                <li><span class="activity-icon edit">✎</span><div><strong>Metadati aggiornati</strong><span>Manoscritti Digitali – 1 giorno fa</span></div></li>
+                <li><span class="activity-icon user">♧</span><div><strong>Nuovo utente registrato</strong><span>utente@esempio.it – 1 giorno fa</span></div></li>
+                <li><span class="activity-icon done">✓</span><div><strong>Backup completato</strong><span>26 ott 2026, 10:24</span></div></li>
+              </ol>
+            </section>
+          </div>
+
+          <div class="bottom-grid">
+            <section class="panel access-panel">
+              <div class="panel-heading"><h2><span class="heading-mark">ϟ</span>Accesso Rapido</h2></div>
+              <div class="access-grid">
+                <button data-view="ricerca"><span>⌕</span>Ricerca<br>Avanzata</button>
+                <button data-action="export"><span>▤</span>Esporta<br>Dati</button>
+                <button data-view="impostazioni"><span>⚙</span>Gestisci<br>Plugin</button>
+                <button data-view="statistiche"><span>▥</span>Consulta<br>Report</button>
+              </div>
+            </section>
+            <section class="quote-panel">
+              <div class="quote-mark">“</div><blockquote>«I libri sono la memoria<br>del mondo.»</blockquote><cite>— Jorge Luis Borges</cite>
+            </section>
+            <section class="support-panel">
+              <div><span class="support-symbol">♧</span><h2>Supporto</h2><p>Hai bisogno di assistenza?<br>Contattaci.</p><button class="dark-button help-open">Apri ticket <b>→</b></button></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view secondary-view" id="collezioni">
+          <div class="page-heading"><p class="eyebrow">Patrimonio documentario</p><h1>Le collezioni</h1><p>Esplora e organizza i fondi e le raccolte della biblioteca digitale.</p></div>
+          <div class="toolbar"><label class="field-search">⌕ <input id="collectionSearch" placeholder="Cerca una collezione..."></label><button class="primary-button" data-action="upload">＋ Nuova collezione</button></div>
+          <div class="large-collection-grid" id="allCollections"></div>
+        </section>
+
+        <section class="view secondary-view" id="mets">
+          <div class="page-heading"><p class="eyebrow">Gestione tecnica</p><h1>Metadati METS</h1><p>Controlla i record bibliografici e lo stato dei pacchetti di metadati.</p></div>
+          <div class="mets-summary">
+            <div><span>Pacchetti generati</span><strong id="metsDone">8.420</strong></div><div><span>Da generare</span><strong id="metsTodo">1.245</strong></div><div><span>Record non associati</span><strong id="metsMissing">38</strong></div>
+            <button class="primary-button" id="generateMets">⚡ Genera METS mancanti</button>
+          </div>
+          <section class="panel table-panel"><div class="panel-heading"><h2>Registro delle risorse</h2><label class="field-search compact-search">⌕ <input id="metsSearch" placeholder="Cerca titolo, autore o BID..."></label></div>
+            <div class="table-scroll"><table><thead><tr><th>Titolo / Risorsa</th><th>ID bibliografico</th><th>Pagine</th><th>Stato METS</th><th>Azioni</th></tr></thead><tbody id="metsTable"></tbody></table></div>
+          </section>
+        </section>
+
+        <section class="view secondary-view" id="ricerca">
+          <div class="page-heading"><p class="eyebrow">Esplorazione del patrimonio</p><h1>Ricerca avanzata</h1><p>Interroga il catalogo digitale per titolo, autore, identificativo o tipologia.</p></div>
+          <section class="panel search-workspace"><label>Termine di ricerca<input id="advancedSearch" type="search" placeholder="Es. manoscritti, autore, BID..."></label><div class="filter-row"><label>Tipologia<select><option>Tutte le tipologie</option><option>Monografie</option><option>Manoscritti</option><option>Periodici</option><option>Carte</option></select></label><label>Stato METS<select><option>Tutti gli stati</option><option>Generato</option><option>Da generare</option><option>Non censito</option></select></label><button class="primary-button" id="runSearch">Cerca nel catalogo</button></div><div id="searchResults" class="search-results"><p>Inserisci un termine per avviare la ricerca.</p></div></section>
+        </section>
+
+        <section class="view secondary-view" id="utenti"><div class="page-heading"><p class="eyebrow">Amministrazione</p><h1>Utenti e accessi</h1><p>Gestione dei profili e delle autorizzazioni della piattaforma.</p></div><div class="placeholder-panel panel"><span>♧</span><h2>Gestione degli utenti</h2><p>Questa sezione è predisposta per l'integrazione con il modulo di autenticazione del backend.</p></div></section>
+        <section class="view secondary-view" id="statistiche"><div class="page-heading"><p class="eyebrow">Monitoraggio</p><h1>Statistiche</h1><p>Una panoramica sull'utilizzo e sulla consistenza del patrimonio digitale.</p></div><div class="stats-detail-grid"><div class="panel chart-panel"><h2>Risorse digitali per mese</h2><div class="bars" aria-label="Grafico dimostrativo"><i style="height:38%"></i><i style="height:52%"></i><i style="height:47%"></i><i style="height:68%"></i><i style="height:61%"></i><i style="height:83%"></i><i style="height:74%"></i><i style="height:94%"></i><i style="height:80%"></i><i style="height:100%"></i><i style="height:88%"></i><i style="height:96%"></i></div><div class="month-labels"><span>Gen</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mag</span><span>Giu</span><span>Lug</span><span>Ago</span><span>Set</span><span>Ott</span><span>Nov</span><span>Dic</span></div></div><div class="panel report-panel"><h2>Stato del patrimonio</h2><div class="donut"></div><p><i class="dot dot-green"></i> METS generati <strong>87%</strong></p><p><i class="dot dot-gold"></i> Da completare <strong>11%</strong></p><p><i class="dot dot-red"></i> Non associati <strong>2%</strong></p></div></div></section>
+        <section class="view secondary-view" id="impostazioni"><div class="page-heading"><p class="eyebrow">Configurazione</p><h1>Impostazioni</h1><p>Preferenze dell'interfaccia e strumenti di gestione.</p></div><section class="panel settings-panel"><div><div><h2>Modalità scura</h2><p>Attiva un tema scuro per l'ambiente di lavoro.</p></div><label class="switch"><input type="checkbox" id="darkToggle"><span></span></label></div><div><div><h2>Preferenze di visualizzazione</h2><p>Riduci le animazioni rispettando le preferenze del dispositivo.</p></div><span class="setting-status">Automatico</span></div><div><div><h2>Integrazione API</h2><p>Connessione ai servizi di catalogazione e conservazione.</p></div><span class="connection-status"><i></i> Pronta per la connessione</span></div></section></section>
+      </main>
+      <footer>Biblioteca Digitale <span>·</span> Gestione e valorizzazione del patrimonio culturale</footer>
+    </div>
+  </div>
+
+  <input type="file" id="catalogFile" accept=".txt,.mrc,.xml,.csv" hidden>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="actionDialog" class="action-dialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button><p class="eyebrow">Biblioteca Digitale</p><h2 id="dialogTitle">Nuova operazione</h2><p id="dialogText">Questa funzione sarà collegata al servizio applicativo.</p><button class="primary-button">Ho capito</button></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
